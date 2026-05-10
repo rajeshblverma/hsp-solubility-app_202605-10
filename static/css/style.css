@@ -1,0 +1,187 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --teal:#008080;--teal-light:#e6f4f4;--teal-dark:#005f5f;
+  --navy:#002b36;--bg:#f0f4f8;--white:#fff;
+  --gray:#64748b;--border:#e2e8f0;
+}
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--navy);
+
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.main-content{
+    flex:1;
+}
+
+/* NAV */
+.topnav{
+  position:sticky;top:0;z-index:9999;height:56px;
+  background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);
+  border-bottom:2px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;padding:0 4%;
+}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.95rem;color:var(--navy);cursor:pointer;text-decoration:none}
+.tabs{display:flex;gap:4px}
+.tab{
+  padding:7px 16px;border-radius:6px;border:none;background:none;
+  font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;
+  color:var(--gray);cursor:pointer;transition:.15s;
+}
+.tab:hover{color:var(--teal);background:var(--teal-light)}
+.tab.on{color:#fff;background:var(--teal)}
+.nav-right{font-size:.72rem;color:var(--gray);font-weight:500}
+
+/* PAGES */
+.page{
+    display:none;
+    min-height:calc(100vh - 56px);
+}
+
+.page.on{
+    display:block;
+}
+
+
+.page-wrap{
+    padding:20px 5%;
+    max-width:860px;
+    margin:0 auto;
+    width:100%;
+}
+
+
+/* ── HOME ── */
+.hero{
+  background:linear-gradient(135deg,#f8fafc,#e8f5f5 50%,#f0f4f8);
+  padding:72px 5% 60px;text-align:center;border-bottom:1px solid var(--border);
+}
+.badge{display:inline-block;border:1px solid #99f6e4;color:var(--teal);padding:5px 16px;border-radius:20px;font-size:.72rem;font-weight:700;background:#fff;margin-bottom:22px;letter-spacing:.04em}
+.hero h1{font-size:clamp(1.9rem,4.5vw,3.2rem);font-weight:800;line-height:1.1;color:#1a202c;margin-bottom:16px;letter-spacing:-.02em}
+.hero h1 span{color:var(--teal)}
+.hero p{font-size:1rem;color:var(--gray);max-width:560px;margin:0 auto 32px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.btn{padding:12px 24px;border-radius:8px;font-weight:700;font-size:.88rem;cursor:pointer;border:none;transition:.2s;font-family:'Inter',sans-serif}
+.btn-p{background:var(--teal);color:#fff;box-shadow:0 4px 14px rgba(0,128,128,.22)}
+.btn-p:hover{background:var(--teal-dark)}
+.btn-s{background:#fff;color:var(--navy);border:1.5px solid var(--border)}
+.btn-s:hover{border-color:var(--teal);color:var(--teal)}
+.pills{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.pill{background:var(--navy);color:#fff;padding:7px 16px;border-radius:6px;font-size:.76rem;font-weight:700}
+
+.hsec{padding:64px 5%;max-width:1100px;margin:0 auto}
+.hsec-white{padding:64px 5%;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.hsec-white-inner{max-width:1100px;margin:0 auto}
+.slabel{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:8px}
+.stitle{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:#1a202c;margin-bottom:12px}
+.ssub{color:var(--gray);font-size:.93rem;max-width:540px}
+
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:36px}
+.pcard{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px;box-shadow:0 2px 6px rgba(0,0,0,.04)}
+.picon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.95rem;margin-bottom:18px}
+.pcard h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+.pcard p{font-size:.85rem;color:var(--gray);line-height:1.6}
+
+.steps{display:flex;flex-direction:column;gap:12px;margin-top:32px;max-width:720px}
+.step{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 22px;display:flex;align-items:flex-start;gap:16px;box-shadow:0 1px 4px rgba(0,0,0,.03)}
+.snum{background:var(--teal);color:#fff;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0;margin-top:2px}
+.step h4{font-size:.9rem;font-weight:700;margin-bottom:3px}
+.step p{font-size:.8rem;color:var(--gray)}
+
+.cta{background:linear-gradient(135deg,var(--teal),var(--teal-dark));padding:60px 5%;text-align:center;color:#fff}
+.cta h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:10px}
+.cta p{opacity:.85;max-width:480px;margin:0 auto 26px;font-size:.92rem}
+.btn-w{background:#fff;color:var(--teal);padding:12px 26px;border-radius:8px;font-weight:700;font-size:.88rem;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:.2s}
+.btn-w:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.15)}
+
+/* FOOTER */
+.foot{
+    background:linear-gradient(
+        90deg,
+        #111827,
+        #1e293b
+    );
+
+    color:#64748b;
+
+    padding:9px 4%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:.68rem;
+
+    font-weight:600;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+}
+.foot .hi{color:#4fd1c5}
+
+/* ── HSP PREDICTOR PAGE ── */
+#p-hsp-predictor {
+  min-height: calc(100vh - 56px);
+}
+#p-hsp-predictor .card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+
+#p-hsp-predictor .result-item {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+#p-hsp-predictor .progress-bar {
+    width: 100%;
+    background: #e5e7eb;
+    height: 8px;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+#p-hsp-predictor .progress-fill {
+    height: 100%;
+    background: #22c55e;
+}
+
+
+
+#p-hsp-predictor input[type=range] {
+  accent-color: var(--teal);
+  width: 100%;
+}
+#p-hsp-predictor #search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+#p-hsp-predictor .search-wrap {
+  position: relative;
+}
+#p-hsp-predictor #drug-search {
+  font-family: 'Inter', sans-serif;
+}
